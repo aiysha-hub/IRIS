@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 
-model = joblib.load("mubyyy.plk")
+model = joblib.load("rfiris.pkl")
 
 
 st.title( " IRIS FLOWER CLASSIFICATION APPLICATION")
@@ -64,3 +64,4 @@ if submit_button:
 
     st.subheader("Prediction Result")
     st.success(f"Predicted species: {prediction[0]}")
+
