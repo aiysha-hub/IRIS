@@ -6,7 +6,7 @@ import joblib
 model = joblib.load("rfiris.pkl")
 
 
-st.title( " IRIS FLOWER CLASSIFICATION APPLICATION")
+st.title("🌸 Iris Flower Classification App")
 
 
 st.write("Predict the species of an Iris Flower Using a Random Forest Model")
@@ -61,7 +61,12 @@ if submit_button:
     input_data = [[sepal_length, sepal_width, petal_length, petal_width]]
 
     prediction = model.predict(input_data)
+    probabilities = model.predict_proba(input_data)
 
     st.subheader("Prediction Result")
     st.success(f"Predicted species: {prediction[0]}")
+
+    st.subheader("Prediction Probability")
+    st.write(probabilities)
+
 
