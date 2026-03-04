@@ -58,10 +58,19 @@ submit_button = form.form_submit_button("Predict")
 
 if submit_button:
 
-    input_data = [[sepal_length, sepal_width, petal_length, petal_width]]
+    input_data = pd.DataFrame(
+        [[sepal_length, sepal_width, petal_length, petal_width]],
+        columns=[
+            "sepal_length",
+            "sepal_width",
+            "petal_length",
+            "petal_width"
+        ]
+    )
 
     prediction = model.predict(input_data)
 
     st.subheader("Prediction Result")
     st.success(f"Predicted species: {prediction[0]}")
+
 
