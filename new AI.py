@@ -55,17 +55,10 @@ petal_width = form.number_input(
 
 submit_button = form.form_submit_button("Predict")
 
+
 if submit_button:
 
-    input_data = pd.DataFrame(
-        [[sepal_length, sepal_width, petal_length, petal_width]],
-        columns=[
-            "sepal length (cm)",
-            "sepal width (cm)",
-            "petal length (cm)",
-            "petal width (cm)"
-        ]
-    )
+    input_data = [[sepal_length, sepal_width, petal_length, petal_width]]
 
     prediction = model.predict(input_data)
 
